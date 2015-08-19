@@ -22,11 +22,15 @@ public class MainActivity extends AppCompatActivity {
     private static final int PORT = 8080;
 
     private MyHTTPD server;
+    Sounds sounds;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sounds = new Sounds(this, new int[]{R.raw.iamgnome});
+
     }
 
     @Override
@@ -102,6 +106,9 @@ public class MainActivity extends AppCompatActivity {
             Method method = session.getMethod();
             String uri = session.getUri();
             System.out.println(method + " '" + uri + "' ");
+            if( uri.equals("/soundIamGnome") ){
+                sounds.sound(R.raw.iamgnome);
+            }
 
             String msg = page;
             msg = msg.replace("#URI#", uri);
