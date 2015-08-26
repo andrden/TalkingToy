@@ -23,10 +23,10 @@ public class Sounds {
     }
 
     void sound(int resId){
-        float curVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-        float maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-        float leftVolume = curVolume / maxVolume;
-        float rightVolume = curVolume / maxVolume;
+//        float curVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+//        float maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+        float leftVolume = 1;//curVolume / maxVolume;
+        float rightVolume = 1;//curVolume / maxVolume;
         int priority = 1;
         int no_loop = 0;
         float normal_playback_rate = 1f;
